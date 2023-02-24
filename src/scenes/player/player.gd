@@ -55,8 +55,6 @@ func _physics_process(delta: float) -> void:
 	move_direction.y = 0
 	move_direction = move_direction.normalized()
 	
-	_animation_player
-	
 	var horizontal_velocity: Vector3 = Vector3(velocity.x, 0, velocity.z)
 	var target_horizontal_distance: Vector3 = move_direction * 10.0
 	horizontal_velocity = horizontal_velocity.lerp(target_horizontal_distance, 10.0 * delta)
@@ -68,6 +66,18 @@ func _physics_process(delta: float) -> void:
 		velocity.x = horizontal_velocity.x
 		velocity.z = horizontal_velocity.z
 		
-	velocity.y += -7.0 * delta
+	velocity.y += -14.0 * delta
+	
+	var current_rotation_target: float = atan2(move_direction.x, move_direction.z)
+	var previous_rotation: float = _player.rotation.y
+	_player.rotation.y = lerp_angle(
+		previous_rotation, 
+		current_rotation_target,
+		delta * 7.0
+	)
+
+	
+	if Input.is_action_just_pressed("jump"):
+		velocity.y += 7.0
 	
 	move_and_slide()

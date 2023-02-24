@@ -788,7 +788,7 @@ bones/70/rotation = Quaternion(0.207927, -0.00645578, 0.00222809, 0.978121)
 bones/70/scale = Vector3(1, 1, 1)
 
 [node name="RootAttachment" type="BoneAttachment3D" parent="player/root/Skeleton3D"]
-transform = Transform3D(0.999996, -0.00261005, 0.000429183, 0.00264509, 0.986283, -0.165045, 7.47864e-06, 0.165045, 0.986286, -0.0196014, 0.915598, -0.013158)
+transform = Transform3D(0.999996, -0.00261004, 0.000429182, 0.00264508, 0.986283, -0.165045, 7.47909e-06, 0.165045, 0.986286, -0.0196014, 0.915598, -0.013158)
 bone_name = "pelvis"
 bone_idx = 0
 
@@ -802,12 +802,12 @@ transform = Transform3D(0.392993, -0.00232767, 0.000561779, 0.00235417, 0.392441
 shape = SubResource("CapsuleShape3D_lc2tv")
 
 [node name="NeckAttachment" type="BoneAttachment3D" parent="player/root/Skeleton3D"]
-transform = Transform3D(0.993626, 0.032794, -0.107855, -0.0111359, 0.980626, 0.195574, 0.112179, -0.193127, 0.97474, -0.042723, 1.63568, 0.114061)
+transform = Transform3D(0.993626, 0.0327941, -0.107855, -0.0111359, 0.980626, 0.195574, 0.112179, -0.193126, 0.97474, -0.0427229, 1.63568, 0.114061)
 bone_name = "neck_01"
 bone_idx = 68
 
 [node name="Cape" type="SoftBody3D" parent="player/root/Skeleton3D/NeckAttachment"]
-transform = Transform3D(0.99991, -0.0068414, -0.0115776, 1.83056e-06, 0.860994, -0.508615, 0.0134479, 0.508569, 0.860917, 0.0133538, -1.53989, -0.903921)
+transform = Transform3D(0.99991, -0.00684143, -0.0115776, 1.82353e-06, 0.860994, -0.508615, 0.0134479, 0.508569, 0.860917, 0.0114632, -1.60252, -0.940382)
 extra_cull_margin = 10.0
 gi_mode = 2
 mesh = SubResource("ArrayMesh_54b70")
@@ -815,39 +815,20 @@ skin = SubResource("Skin_1f1wo")
 skeleton = NodePath("")
 collision_layer = 4
 collision_mask = 4
-simulation_precision = 10
-total_mass = 10.01
-linear_stiffness = 1.0
-damping_coefficient = 0.2
-drag_coefficient = 0.5
-pinned_points = [0, 4, 2, 119, 116, 1, 118, 3, 117]
-attachments/0/point_index = 0
+drag_coefficient = 0.1
+pinned_points = [1, 118, 3, 117]
+attachments/0/point_index = 1
 attachments/0/spatial_attachment_path = NodePath("..")
-attachments/0/offset = Vector3(0.0812842, 0.0303301, -0.0832551)
-attachments/1/point_index = 4
+attachments/0/offset = Vector3(0.134917, -0.0715523, -0.0749658)
+attachments/1/point_index = 118
 attachments/1/spatial_attachment_path = NodePath("..")
-attachments/1/offset = Vector3(0.0435121, 0.0340366, -0.0939142)
-attachments/2/point_index = 2
+attachments/1/offset = Vector3(-0.1123, -0.0402815, -0.102197)
+attachments/2/point_index = 3
 attachments/2/spatial_attachment_path = NodePath("..")
-attachments/2/offset = Vector3(0.00252359, 0.036334, -0.0988644)
-attachments/3/point_index = 119
+attachments/2/offset = Vector3(0.112634, -0.0402811, -0.0991716)
+attachments/3/point_index = 117
 attachments/3/spatial_attachment_path = NodePath("..")
-attachments/3/offset = Vector3(-0.0385832, 0.0340364, -0.0950183)
-attachments/4/point_index = 116
-attachments/4/spatial_attachment_path = NodePath("..")
-attachments/4/offset = Vector3(-0.0766283, 0.0303298, -0.0853789)
-attachments/5/point_index = 1
-attachments/5/spatial_attachment_path = NodePath("..")
-attachments/5/offset = Vector3(0.136808, -0.0089227, -0.0385052)
-attachments/6/point_index = 118
-attachments/6/spatial_attachment_path = NodePath("..")
-attachments/6/offset = Vector3(-0.110409, 0.022348, -0.0657362)
-attachments/7/point_index = 3
-attachments/7/spatial_attachment_path = NodePath("..")
-attachments/7/offset = Vector3(0.114524, 0.0223485, -0.0627111)
-attachments/8/point_index = 117
-attachments/8/spatial_attachment_path = NodePath("..")
-attachments/8/offset = Vector3(-0.133335, -0.00892317, -0.0421383)
+attachments/3/offset = Vector3(-0.135226, -0.0715528, -0.0785989)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../player")
