@@ -9,6 +9,7 @@ var _camera_basis: Basis
 var _player: Node3D
 var _skeleton: Skeleton3D
 var _body_collision: CollisionShape3D
+var _animation_player: AnimationPlayer
 
 const X_AXIS: String = "x"
 const Y_AXIS: String = "y"
@@ -36,6 +37,8 @@ func _ready() -> void:
 	_player = get_node("player")
 	_skeleton = %Skeleton3D
 	_body_collision = get_node("BodyCollision")
+	_animation_player = get_node("AnimationPlayer")
+	_animation_player.play("Player/Run")
 
 func _input(event: InputEvent) -> void:
 	input_direction = Vector2(
@@ -51,6 +54,8 @@ func _physics_process(delta: float) -> void:
 	move_direction += _camera_basis.x * input_direction.x
 	move_direction.y = 0
 	move_direction = move_direction.normalized()
+	
+	_animation_player
 	
 	var horizontal_velocity: Vector3 = Vector3(velocity.x, 0, velocity.z)
 	var target_horizontal_distance: Vector3 = move_direction * 10.0
