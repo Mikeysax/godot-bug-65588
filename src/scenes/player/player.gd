@@ -38,7 +38,7 @@ func _ready() -> void:
 	_skeleton = %Skeleton3D
 	_body_collision = get_node("BodyCollision")
 	_animation_player = get_node("AnimationPlayer")
-	_animation_player.play("Player/Run")
+	_animation_player.play("Player/Idle")
 
 func _input(event: InputEvent) -> void:
 	input_direction = Vector2(
@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = horizontal_velocity.x
 		velocity.z = horizontal_velocity.z
 		
-	velocity.y += -14.0 * delta
+	velocity.y += -24.0 * delta
 	
 	var current_rotation_target: float = atan2(move_direction.x, move_direction.z)
 	var previous_rotation: float = _player.rotation.y
@@ -80,4 +80,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		velocity.y += 7.0
 	
+	if velocity.length() > 0.2:
+		_animation_player.play("Player/Run")
+	else:
+		_animation_player.play("Player/Idle")
+
 	move_and_slide()
